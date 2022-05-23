@@ -1,4 +1,4 @@
-import { Form, Button, Row, Col } from 'react-bootstrap';
+import { Form, Button, Row, Col } from "react-bootstrap";
 
 const Minter = (props) => {
   const {
@@ -22,7 +22,7 @@ const Minter = (props) => {
               name="uploadType"
               value="url"
               onChange={handleChange}
-              checked={formOptions.uploadType === 'url'}
+              checked={formOptions.uploadType === "url"}
               type="radio"
               label="URL"
             />
@@ -30,14 +30,14 @@ const Minter = (props) => {
               name="uploadType"
               value="file"
               onChange={handleChange}
-              checked={formOptions.uploadType === 'file'}
+              checked={formOptions.uploadType === "file"}
               type="radio"
               label="File"
             />
           </Col>
 
           <Col className="mb-3">
-            {formOptions.uploadType === 'file' && (
+            {formOptions.uploadType === "file" && (
               <>
                 <Form.Label>Upload File</Form.Label>
                 <Form.Control
@@ -49,7 +49,7 @@ const Minter = (props) => {
               </>
             )}
 
-            {formOptions.uploadType === 'url' && (
+            {formOptions.uploadType === "url" && (
               <>
                 <Form.Label>Link to Asset</Form.Label>
                 <Form.Control
@@ -70,7 +70,7 @@ const Minter = (props) => {
             required
             type="text"
             name="name"
-            placeholder="e.g. My first NFT!"
+            placeholder="e.g. Name for NFT!"
             onChange={handleChange}
             value={formOptions.name}
           />
