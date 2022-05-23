@@ -86,7 +86,10 @@ export const mintNFT = async (data, isFile) => {
   //make metadata
   if (name.trim() !== "" || description.trim() !== "" || !asset) {
     if (isFile && asset) {
-      requestData = createFormData(asset, { name, description });
+      requestData = createFormData(asset, {
+        name: `${name}_file_${asset.name || ""}`,
+        description,
+      });
     } else if (asset.trim() !== "") {
       requestData = createJSONData({ name, description, asset });
     } else return errors.incomplete;
