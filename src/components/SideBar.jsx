@@ -22,8 +22,8 @@ const Sidebar = () => {
   ];
   return (
     <aside
-      style={{ height: "calc(100vh - 56px)", width: "5rem" }}
-      className="bg-white shadow-sm"
+      style={{ top: "56px", left: 0, bottom: 0, width: "5rem", zIndex: 9 }}
+      className="bg-white shadow-sm position-fixed"
     >
       {links.map((link) => (
         <NavLink

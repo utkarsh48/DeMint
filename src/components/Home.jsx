@@ -1,8 +1,7 @@
-import { ListGroup } from 'react-bootstrap';
-import { decodeTransaction } from '../util/scan';
+import { ListGroup } from "react-bootstrap";
+import { decodeTransaction } from "../util/scan";
 
 const Home = ({ transactions }) => {
-
   return (
     <div className="bg-white shadow-sm p-4 rounded-2 h-100">
       <h1 className="text-center mb-5" id="title">
@@ -19,7 +18,7 @@ const Home = ({ transactions }) => {
           <ListGroup.Item key={transaction.hash}>
             <div className="text-truncate">
               <a
-                href={decodeTransaction(transaction.input).params[1]['value']}
+                href={decodeTransaction(transaction.input).params[1]["value"]}
                 className="fw-bold text-decoration-none"
                 rel="noreferrer"
                 target="_blank"

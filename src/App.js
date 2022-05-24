@@ -131,12 +131,12 @@ function App() {
   return (
     <>
       <TopNav wAddress={walletAddress} connectWallet={connectWalletPressed} />
-      <main className="Minter bg-light">
+      <main className="bg-light mt-5 pt-2">
         <div className="d-flex h-100">
           {walletAddress && <Sidebar />}
           <Container
             fluid
-            style={{ height: "calc(100vh - 56px)", overflow: "auto" }}
+            style={{ minHeight: "calc(100vh - 56px)", marginLeft: "5rem" }}
             className="py-2"
           >
             <Routes>

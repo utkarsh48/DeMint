@@ -9,7 +9,13 @@ const truncateText = (text = "") => {
 const TopNav = (props) => {
   const { wAddress, connectWallet } = props;
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar
+      bg="dark"
+      variant="dark"
+      expand="lg"
+      fixed="top"
+      style={{ zIndex: 10 }}
+    >
       <Container>
         <Navbar.Brand href="#">DeMint</Navbar.Brand>
         {wAddress ? (
