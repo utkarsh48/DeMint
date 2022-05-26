@@ -1,6 +1,6 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import Minter from "./components/Minter";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, Navigate } from "react-router-dom";
 import Auth from "./components/Auth";
 import { getWallet, mintNFT } from "./util/interact";
 import { useEffect, useState } from "react";
@@ -136,7 +136,10 @@ function App() {
           {walletAddress && <Sidebar />}
           <Container
             fluid
-            style={{ minHeight: "calc(100vh - 56px)", marginLeft: "5rem" }}
+            style={{
+              minHeight: "calc(100vh - 56px)",
+              paddingLeft: walletAddress ? "5.5rem" : "0.75rem",
+            }}
             className="py-2"
           >
             <Routes>
@@ -162,11 +165,12 @@ function App() {
                 }
               />
               <Route path="/" element={<Home transactions={transactions} />} />
+              <Route path="/*" element={<Navigate to="/" replace />} />
             </Routes>
           </Container>
         </div>
       </main>
-      <ToastContainer position="top-end" className="p-3">
+      <ToastContainer position="top-end" className="p-3" style={{ zIndex: 4 }}>
         <Toast
           show={showToast}
           onClose={() => setShowToast(false)}

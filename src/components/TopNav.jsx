@@ -14,7 +14,7 @@ const TopNav = (props) => {
       variant="dark"
       expand="lg"
       fixed="top"
-      style={{ zIndex: 10 }}
+      style={{ zIndex: 2 }}
     >
       <Container>
         <Navbar.Brand href="#">DeMint</Navbar.Brand>
